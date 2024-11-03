@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil do Aluno</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Perfil do Aluno</h1>
+
+    <div class="foto-container">
+      <div class="carrossel">
+        <div class="fotos" id="fotos">
+          <img src="foto1.jpg" alt="Álvaro G. Fernandes em evento 1" />
+          <img src="foto2.jpg" alt="Álvaro G. Fernandes em evento 2" />
+          <img src="foto3.jpg" alt="Álvaro G. Fernandes em evento 3" />
+        </div>
+      </div>
+      <div class="navegacao">
+        <button onclick="anterior()">Anterior</button>
+        <button onclick="proximo()">Próximo</button>
+      </div>
+    </div>
+
+    <div class="conteudo-alinhado">
+      <h2>Meus Dados</h2>
+      <table class="info-table">
+        <tr>
+          <td><b>Nome:</b> Gustavo Luiz Aguiar Lúcio</td>
+        </tr>
+        <tr>
+          <td><b>RA:</b> 32328395</td>
+        </tr>
+        <tr>
+          <td>
+            <b>Curso:</b> Análise e Desenvolvimento de Sistemas (3° período)
+          </td>
+        </tr>
+        <tr>
+          <td><b>Endereço:</b> Rua Vigia 140, São Geraldo</td>
+        </tr>
+        <tr>
+          <td><b>E-mail:</b> gluiz10041@gmail.com</td>
+        </tr>
+      </table>
+
+      <h2>UCs já cursadas</h2>
+      <table class="uc-table">
+        <tr>
+          <td>
+            <ul>
+              <li>Ambientes computacionais e conectividade</li>
+              <li>Modelagem de software</li>
+              <li>Sistemas computacionais e segurança</li>
+              <li>Programação de soluções computacionais</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <h2>Perfil Pessoal</h2>
+      <table class="descricao-table">
+        <tr>
+          <td>
+            <p>
+              Prazer, meu nome é Gustavo Luiz, atualmente estou cursando Análise
+              e Desenvolvimento de Sistemas na faculdade UNA. Torço para o maior
+              time de Minas Gerais, mais conhecido como Cruzeiro Esporte Clube.
+              Por fim, meu principal hobby é jogar futebol, treinar e assistir
+              jogos de futebol, exclusivamente europeu e brasileiro.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <h2>Perfil Profissional/Acadêmico</h2>
+      <table class="descricao-table">
+        <tr>
+          <td>
+            Prazer, sou o Gustavo, atualmente estudo Análise e Desenvolvimento
+            de Sistemas. Minhas experiências profissionais são: Já trabalhei
+            como atendente de SAC, e atualmente, trabalho no administrativo de
+            duas empresas (home office). Sou um pouco novo nesta área, tenho um
+            pouco de conhecimento na linguagem de programação Java, mas estou
+            buscando aprender novas linguagem e expandir meu conhecimento na
+            área de TI.
+          </td>
+        </tr>
+      </table>
+
+      <h2>Meu LinkedIn</h2>
+      <table class="redes-sociais">
+        <tr>
+          <td>
+            <a
+              href="https://www.linkedin.com/in/gustavo-luiz-2ba732292/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              >LinkedIn</a
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      let i = 0;
+
+      function mudarFoto(indice) {
+        const fotos = document.getElementById("fotos");
+        const totalFotos = fotos.children.length;
+        i = (indice + totalFotos) % totalFotos;
+        fotos.style.transform = `translateX(-${i * 100}%)`;
+      }
+
+      function anterior() {
+        mudarFoto(i - 1);
+      }
+
+      function proximo() {
+        mudarFoto(i + 1);
+      }
+    </script>
+  </body>
+</html>
